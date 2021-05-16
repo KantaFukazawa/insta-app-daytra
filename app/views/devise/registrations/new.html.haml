@@ -1,25 +1,28 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :acccount
-    %br/
-    = f.name.field :account, autofocus: true, autocomplete: "name"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'login_form') do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .login_top
+    .login_middle
+      .field.form_field
+        = f.label :account, class:'login_label'
+        %br/
+        = f.text_field :username, autofocus: true, autocomplete: "name", class: 'login_field';
+      .field.form_field
+        = f.label :email, class:'login_label'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'login_field';
+      .field.form_field
+        = f.label :password, class:'login_label'
+        -# - if @minimum_password_length
+        -#   %em
+        -#     (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: 'login_field';
+      .field.form_field
+        = f.label :password_confirmation, class:'login_label'
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'login_field';
+    .login_bottom
+      .actions.login_actions
+        = f.submit "CREATE ACCOUNT", class: 'login_btn'
+  = render "devise/shared/links"
