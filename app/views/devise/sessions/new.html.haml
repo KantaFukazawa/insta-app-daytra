@@ -2,11 +2,11 @@
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .login_top
     .login_middle
-      .field.form_field
+      .field.form_item
         = f.label :email, class:'login_label'
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", class:'login_field'
-      .field.form_field
+      .field.form_item
         = f.label :password, class:'login_label'
         %br/
         = f.password_field :password, autocomplete: "current-password", class:'login_field'
@@ -16,5 +16,5 @@
         -#   = f.label :remember_me
     .login_bottom
       .actions.login_actions
-        = f.submit "Log in", class: 'login_btn signin_btn'
+        = f.submit "Log in", class: 'submit_btn signin_btn'
 = render "devise/shared/links"
