@@ -3,26 +3,26 @@
     = render "devise/shared/error_messages", resource: resource
     .login_top
     .login_middle
-      .field.form_field
+      .field.form_item
         = f.label :account, class:'login_label'
         %br/
         = f.text_field :username, autofocus: true, autocomplete: "name", class: 'login_field';
-      .field.form_field
+      .field.form_item
         = f.label :email, class:'login_label'
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'login_field';
-      .field.form_field
+      .field.form_item
         = f.label :password, class:'login_label'
         -# - if @minimum_password_length
         -#   %em
         -#     (#{@minimum_password_length} characters minimum)
         %br/
         = f.password_field :password, autocomplete: "new-password", class: 'login_field';
-      .field.form_field
+      .field.form_item
         = f.label :password_confirmation, class:'login_label'
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", class: 'login_field';
     .login_bottom
       .actions.login_actions
-        = f.submit "CREATE ACCOUNT", class: 'login_btn'
+        = f.submit "CREATE ACCOUNT", class: 'submit_btn login_btn'
   = render "devise/shared/links"

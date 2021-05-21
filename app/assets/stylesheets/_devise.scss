@@ -19,35 +19,6 @@
   width: 95%;
 }
 
-.form_field {
-  padding: 10px 0 0 0 ;
-}
-
-.login_label {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 16px;
-  color: $label_color;
-  mix-blend-mode: normal;
-  opacity: 0.9;
-}
-
-.login_field {
-  width: 100%;
-  padding: 0 0 10px 0;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
-  color: $field_text;
-  mix-blend-mode: normal;
-  opacity: 0.9;
-  border-bottom: 1px solid #9E9E9E;
-}
-
 .login_bottom {
   position: absolute;
   bottom: 138px;
@@ -59,16 +30,6 @@
 
 .login_btn {
   padding: 14px 108px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  text-align: center;
-  color: #000000;
-  mix-blend-mode: normal;
-  opacity: 0.9;
-  background: $btn_bg;
 }
 
 .signin_btn {

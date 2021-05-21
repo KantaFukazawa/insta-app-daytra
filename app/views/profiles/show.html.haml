@@ -1,0 +1,27 @@
+.container
+  .user_top
+    = link_to '←', '#', class: '_back'
+    - if @profile.username.present?
+      %p._yourname
+        = @profile.username
+    - else
+      %p._yourname
+        = @profile.user.username
+    - if @profile.avatar.attached?
+      ._img
+        = image_tag @profile.avatar, class:'your_img'
+    - else
+      ._img
+        = image_tag 'default-avatar.png'
+  .user_middle
+    ._item
+      %p._counts 55
+      %p._status Posts
+    ._item
+      %p._counts 34
+      %p._status Followings
+    ._item
+      %p._counts 14
+      %p._status Followers
+  .user_bottom
+  
