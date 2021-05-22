@@ -1,5 +1,5 @@
 .container
-  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+  = form_with(model: @profile, url: profile_path, class:'profile_form'  method: 'put', local: true) do |f|
     .field.form_item
       = f.label :account, class:'form_label'
       %br/
@@ -8,6 +8,6 @@
       = f.label :avatar, 'avatar', class:'form_label'
       %br/
       = f.file_field :avatar
-    .login_bottom
-      .actions.login_actions
+    .btn_field
+      .actions
         = f.submit "保存", class: 'submit_btn save_btn'

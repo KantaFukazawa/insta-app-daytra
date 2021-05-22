@@ -1,5 +1,5 @@
-.container
-  .user_top
+.container.profile_container
+  .profile_top
     = link_to '←', '#', class: '_back'
     - if @profile.username.present?
       %p._yourname
@@ -9,11 +9,11 @@
         = @profile.user.username
     - if @profile.avatar.attached?
       ._img
-        = image_tag @profile.avatar, class:'your_img'
+        = image_tag @profile.avatar, class:'your_img', id:'avatar_btn'
     - else
-      ._img
-        = image_tag 'default-avatar.png'
-  .user_middle
+      ._img#avatar_btn
+        = image_tag 'default-avatar.png', class:'your_img', id:'avatar_btn'
+  .profile_middle
     ._item
       %p._counts 55
       %p._status Posts
@@ -23,5 +23,20 @@
     ._item
       %p._counts 14
       %p._status Followers
-  .user_bottom
-  
+  .profile_bottom
+//////　モーダルウィンドウ（edit画面）//////
+#modal
+  #modal_bg
+  .modal_inner
+    = form_with(model: @profile, url: profile_path, class: 'profile_form',  method: 'put', local: true) do |f|
+      .field.form_item
+        = f.label :account, class:'form_label'
+        %br/
+        = f.text_field :username, autofocus: true, autocomplete: "name", class: 'form_field';
+      .field.form_item
+        = f.label :avatar, 'avatar', class:'form_label'
+        %br/
+        = f.file_field :avatar
+      .profile_form_bottom
+        .actions.profile_form_actions
+          = f.submit "保存", class: 'submit_btn save_btn'
