@@ -1,0 +1,38 @@
+@import 'variable';
+
+.login_form {
+  position: relative;
+}
+
+.login_top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 298px;
+  width: 100%;
+  background: url(login_bg.png), 100%/100%;
+}
+
+.login_middle {
+  position: absolute;
+  top: 302px;
+  width: 95%;
+}
+
+.login_bottom {
+  position: absolute;
+  bottom: 138px;
+}
+
+.login_actions {
+  
+}
+
+.login_btn {
+  padding: 14px 108px;
+}
+
+.signin_btn {
+  padding: 14px 155px;
+}
+
