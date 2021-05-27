@@ -1,18 +1,10 @@
 .container.profile_container
   .profile_top
     = link_to '←', '#', class: '_back'
-    - if @profile.username.present?
-      %p._yourname
-        = @profile.username
-    - else
-      %p._yourname
-        = @profile.user.username
-    - if @profile.avatar.attached?
-      ._img
-        = image_tag @profile.avatar, class:'your_img', id:'avatar_btn'
-    - else
-      ._img#avatar_btn
-        = image_tag 'default-avatar.png', class:'your_img', id:'avatar_btn'
+    %p._yourname
+      = username_updated(@profile)
+    ._img
+      = avatar_attached(@profile)
   .profile_middle
     ._item
       %p._counts 55
