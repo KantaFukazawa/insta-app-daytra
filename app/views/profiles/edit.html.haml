@@ -3,7 +3,7 @@
     .field.form_item
       = f.label :account, class:'form_label'
       %br/
-      = f.text_field :username, autofocus: true, autocomplete: "name", class: 'form_field';
+      = f.text_field :username, autofocus: true, autocomplete: "name", value: @profile, class: 'form_field';
     .field.form_item
       = f.label :avatar, 'avatar', class:'form_label'
       %br/

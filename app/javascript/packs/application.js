@@ -18,18 +18,48 @@ window.$ = window.jQuery = jQuery;
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import $axios from 'axios'
+
 
 document.addEventListener("DOMContentLoaded", function(){
-  var btn = document.getElementById('avatar_btn');
-  var modal = document.getElementById('modal');
 
+  //-------モーダル画面-------//
+  const btn = document.getElementById('avatar_btn');
+  const modal = document.getElementById('modal');
   btn.addEventListener('click', function() {
-    $(modal).fadeIn(800)
+    $(modal).fadeIn(800);
   })
 
-  var closeBtn = document.getElementById('modal_bg');
-
+  //モーダル画面close
+  const closeBtn = document.getElementById('modal_bg');
   closeBtn.addEventListener('click', function() {
-    $(modal).fadeOut(800)
-  })
-})
+    $(modal).fadeOut(800);
+  });
+
+  //-------名前の変更-------//
+  $('#profile_submit').click(() => {
+    const username = $('#profile_username').val();
+    const yourname = document.getElementById('yourname');
+    $(yourname).children().remove();
+    $(yourname).append(username);
+
+    
+    $(modal).fadeOut(800);
+  });
+
+  //-------アバターの変更-------//
+  $('#profile_avatar').change(function(e){
+    //ファイルオブジェクトを取得する
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    //アップロードした画像を設定する
+    reader.onload = (function(file){
+      return function(e){
+        $('#avatar_btn').attr("src", e.target.result);
+        $('#avatar_btn').attr("title", file.name);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
