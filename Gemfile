@@ -16,7 +16,8 @@ gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+# gem 'jbuilder', '~> 2.7'
+gem 'active_model_serializers'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'bullet' # N+1問題を検出
   gem 'pry-byebug' # デバッグ用gem
   gem 'pry-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -69,3 +71,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'devise'
 gem "haml-rails"
+
